@@ -36,9 +36,6 @@ class Question(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     content = Column(String, nullable=False)
-    company_id = Column(Integer, ForeignKey('companies.id'))
-
-    company = relationship("Company", back_populates="questions")
     
     def __repr__(self):
         return f"<Question(id={self.id}, content={self.content})>"
